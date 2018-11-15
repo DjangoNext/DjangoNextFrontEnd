@@ -1,40 +1,44 @@
 import React, { PureComponent } from 'react'
-import Link from 'next/link'
+import { Link } from '/../routes.js'
+
+import styles from 'styles/Layout/Header.scss'
 
 export default class Layout extends PureComponent {
   render () {
     return (
       <div className='layout'>
-        <header>
-          <img src='/static/next-logo.png' />
-          <h3>nextjs redux starter</h3>
-          <menu>
-            <Link href='/about'>
-              <a>About</a>
-            </Link>
-            <Link href='/'>
-              <a>Redux demo</a>
-            </Link>
-          </menu>
-          <style jsx>{`
-            header {
-              display: flex;
-              align-items: center;
-              font-family: Monospace;
-              margin: 10px 20px;
-            }
-            h3 {
-              margin-left: 10px
-            }
-            img {
-              width: 30px;
-            }
-            menu > a {
-              margin-right: 16px;
-            }
-          `}</style>
+        <header className="d-flex align-items-center justify-content-center">
+          <div className="container">
+            <div className="row justify-content-between align-items-center">
+              <div className="col-auto">
+                <span className="blog-name">Блог DjangoNext</span>
+              </div>
+              <div className="col-auto">
+                <nav>
+                  <ul>
+                    <li>
+                      <Link href="/">
+                        <a>Главная</a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/about">
+                        <a>Об авторах</a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="">
+                        <a>Нах*й эта кнопка</a>
+                      </Link>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
         </header>
         { this.props.children }
+        <style jsx>{styles}</style>
       </div>
     )
   }

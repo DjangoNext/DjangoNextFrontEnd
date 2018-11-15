@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-import repos from './repos'
+import submenu from './submenu'
 
 export default combineReducers({
-  repos
+  submenu
 })

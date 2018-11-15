@@ -1,0 +1,39 @@
+@import '../_vars.scss';
+header {
+  height: 116px;
+  .blog-name {
+    font: {
+      size: $logo-size;
+      weight: 700;
+    }
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    li {
+      margin-left: 7.5px;
+      margin-right: 7.5px;
+      a {
+        padding: 7.5px;
+      }
+    }
+  }
+}
+.submenu {
+  background-color: #000;
+  color: #fff;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  &__item {
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+    a { padding: 7.5px; }
+    &:first-child {
+      margin-left: 0;
+      a { margin-left: -7.5px; }
+    }
+  }
+}

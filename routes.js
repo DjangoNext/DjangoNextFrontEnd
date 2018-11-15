@@ -5,8 +5,11 @@ const APP_ROUTES = [{
   page: 'index',
   pattern: '/'
 }, {
-  page: 'about',
-  pattern: '/about'
+  page: 'post',
+  pattern: '/post/:post_slug'
+}, {
+  page: 'category',
+  pattern: '/category/:category_slug'
 }]
 
 APP_ROUTES.forEach(route => routes.add(route))

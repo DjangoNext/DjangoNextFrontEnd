@@ -1,6 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import Helmet from 'react-helmet'
-import styles from 'styles/base.scss'
 
 // from https://github.com/zeit/next.js/edit/canary/examples/with-react-helmet/pages/_document.js
 export default class extends Document {
@@ -26,12 +25,12 @@ export default class extends Document {
   }
 
   get helmetJsx () {
-    let title = 'Hello next.js Real World!'
     return (
       <Helmet>
-        <title>{title}</title>
+        <title>Django Next</title>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <meta property='og:title' content={title} />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/static/normalize.css"/>
       </Helmet>
     )
   }
@@ -44,7 +43,6 @@ export default class extends Document {
           { this.helmetHeadComponents }
         </Head>
         <body {...this.helmetBodyAttrComponents}>
-          <style>{styles}</style>
           <Main />
           <NextScript />
         </body>

@@ -1,4 +1,4 @@
 import withReduxStore from 'store/createStore'
-import SearchRepoContainer from 'containers/SearchRepoContainer'
+import IndexContainer from '../src/containers/IndexContainer'
 
-export default withReduxStore(SearchRepoContainer)
+export default withReduxStore(IndexContainer)
