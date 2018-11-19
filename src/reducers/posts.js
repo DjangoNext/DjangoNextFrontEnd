@@ -1,7 +1,7 @@
 import * as ActionType from 'actions/submenu'
 
 export const initialState = {
-  status: 'noInited'
+  status: 'noInited',
   data: {}
 }
 
