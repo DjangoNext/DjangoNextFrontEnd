@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-
+import { Link } from '/../routes'
 import { connect } from 'react-redux'
 import styles from 'styles/Layout/Header.scss'
 
@@ -21,11 +21,10 @@ const SubmenuItem = ({ href, title }) => {
 }
 
 class Submenu extends PureComponent {
-  renderItems({ href, title }) {
-    return <SubmenuItem href={href} title={title} />
+  renderItems({ slug, title }) {
+    return <SubmenuItem href={`/category/${slug}`} title={title} />
   }
   render () {
-    console.log(this.props.data.map);
     return (
       <nav className='submenu'>
         <div className="container">

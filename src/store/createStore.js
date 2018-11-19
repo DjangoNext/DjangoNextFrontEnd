@@ -1,4 +1,3 @@
-import Immutable from 'immutable'
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 import withRedux from 'next-redux-wrapper'
@@ -35,18 +34,17 @@ function createMiddlewares ({ isServer }) {
   return middlewares
 }
 
-function immutableChildren (obj) {
+function immutableChildren (obj, newObj) {
   let state = {}
-  Object.keys(obj).map((key) => {
-    state[key] = Immutable.fromJS(obj[key])
-  })
+  Object.keys(obj).forEach((key) => { state[key] = obj[key] })
+  Object.keys(newObj).forEach((key) => { state[key] = newObj[key] })
   return state
 }
 
 export const initStore = (initialState = {}, context) => {
   let { isServer } = context
   let middlewares = createMiddlewares({ isServer })
-  let state = immutableChildren(initialState)
+  let state = immutableChildren(initialState, {})
 
   return createStore(
     rootReducer,
